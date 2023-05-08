@@ -35,7 +35,7 @@ Dear Developer: If you have any suggestions on how this application can be impro
 <li className="list-group-item">
  <a href="https://www.facebook.com/ibrahim.isiaq.775"><i className="bi-facebook" style={{color:"hsl(217, 91.2%, 59.8%)"}}></i> Message me on Facebook </a></li>
 <li className="list-group-item">
-<a href=""><i className="bi-github"></i> Pull issue/request to GitHub</a></li>
+<a href="https://github.com/khalil-coder/quran-kareem"><i className="bi-github"></i> Pull issue/request to GitHub's repository</a></li>
 </ul>
 </div>
   )

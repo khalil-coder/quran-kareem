@@ -15,7 +15,7 @@ const style = {
   inset: 0,
   display: "grid",
   placeContent: "center",
-  background: 'url("./src/assets/alquran/abdullah-arif-Dxi6KbpvUgA-unsplash.jpg")',
+  background: 'url("abdullah-arif-Dxi6KbpvUgA-unsplash.jpg")',
   backgroundAttachment: "fixed",
   backgroundSize:"cover",
 };
