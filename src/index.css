@@ -1,0 +1,230 @@
+
+.main-page-container:has(#theme:checked), #search-main:has(#result-theme:checked){
+  background: #222222;
+  color: whitesmoke;
+}
+
+
+@font-face {
+  font-family: "Bismillahi";
+  src: url("../ar_fonts/A Thuluth.ttf");
+}
+
+
+@font-face {
+  font-family: "Text";
+  src: url("../ae_fonts1/AAHS/ae_Cortoba.ttf");
+}
+
+@font-face {
+  font-family: "Index";
+  src: url("../ar_fonts/KFGQPC Uthmanic Script HAFS Regular.otf");
+}
+
+
+#verse-parent {
+  padding: 0;
+  list-style: none
+ 
+}
+
+.header,
+.head{
+  font-family: "Bismillahi";
+  font-weight: thin;
+}
+
+.header{
+  font-size: 1em;
+  font-weight: bold;
+  word-spacing: 0.2em;
+}
+
+.head {
+  font-size: 3em;
+  font-weight: bolder;
+}
+.bismillah, .arabic-index{
+  font-family: "Bismillahi", serif;
+}
+.bismillah{
+  font-size: 2em;
+}
+
+.verse-list, .resultArabic {
+  font-size: 1.4em;
+  font-weight: 3px;
+  font-family: "Index", serif;
+  font-stretch: ultra-condensed;
+}
+.resultArabic{
+  text-align: right;
+ margin-top: 0.5em;
+}
+
+.verse-number {
+ font-family: "Index";
+  font-size: 1.5em;
+  margin-right: 0.4em;
+  font-weight: thin;
+}
+.tafsir-font{
+  font-family: Comic Sans MS;
+}
+
+
+
+.verse-container {
+  margin: 0 0 0.1rem 0;
+  padding: 1.3em 0.3em;
+  border-radius: 10px;
+}
+
+.index-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.index-container > *{
+  font-family: "Surah";
+  border: 2px solid hsl(210, 40%, 96.1%);
+  margin:6px;
+  text-align: center;
+  padding:10px;
+}
+.index-container > *:active, .arabic-index:active{
+  border:0;
+ box-shadow: 1px 1px 5px 3px rgba(0,0,0,0.4);
+}
+
+.arabic-index{
+  font-weight: bolder;
+  font-size: 3em;
+  padding: 1em 0;
+  background: hsl(210, 40%, 96.1%);
+}
+
+.head-container{
+  backdrop-filter: blur(10px);
+  border-radius: 0 0 7px 7px;
+}
+
+#chapter-page-options{
+  display:flex;
+  justify-content: space-evenly;
+  font-size: 1em;
+  margin-bottom: 0.4em;
+}
+
+
+.tafsir-book:active, .info-icon:active, .menu-icon:active{
+  font-size: 0.6em;
+  color: hsl(221, 83.2%, 53.3%);
+}
+
+.tafsir-btn{
+  display:flex;
+  overflow-x: scroll;
+  gap:.4em;
+ position: sticky;
+ top: 0;
+}
+
+.tafsir-btn::-webkit-scrollbar{
+  display: none;
+}
+
+.tafsir-btn button{
+
+  white-space: pre;
+}
+
+.menu-chapter{
+  text-decoration: none;
+  font-family: "Bismillahi";
+  padding: 0.2em;
+  color: black;
+}
+.menu-chapter:active{
+  color: white;
+}
+
+#pagination{
+  position: sticky;
+  justify-content:center;
+  bottom: 4px;
+  
+}
+
+.search-info{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  font-size: 10pt;
+  justify-content: space-evenly;
+  font-family: "Surah"; 
+}
+
+#result-heading-bar{
+  padding: 1em 0.2em 1em 0.2em;
+}
+
+#result-div{
+  padding: 0.4em;
+}
+
+.end-index{
+  font-family: "Index" ;
+}
+
+#about-surah-heading{
+  font-size: 0.8em;
+}
+
+.back-arrow{
+  animation: arrow 1s ease-in-out 3s ;
+}
+@keyframes arrow{
+  50%{
+    transform: translateX(-50px);
+  }
+}
+
+.about-div{
+  font-family: "Index";
+  word-spacing:  0.2em;
+  font-stretch: ultra-condensed;
+}
+.about-div em{
+  color: hsl(221, 83.2%, 53.3%);
+  font-family: "Index",Arial;
+}
+
+ .first-para::first-letter{
+  font-weight: bold;
+  font-size: 2em;
+  font-family: "Text";
+}
+.about-heading{
+  font-family: "Text";
+}
+.about-heading{
+  font-variant: small-caps;
+  font-size: 2em;
+  font-weight: bold;
+}
+#nav-brand{
+  font-family: "Text", Monospace;
+ font-size: 1.4em;
+  
+}
+
+#contact-container > a{
+  margin-right: 3px;
+  color: black;
+  text-decoration: none;
+}
+
+#contact-container > a:active{
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: blue;
+}
