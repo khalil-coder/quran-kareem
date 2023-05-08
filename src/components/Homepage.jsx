@@ -2,7 +2,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 import { useState, useEffect } from "react";
 import Chapter from "./Chapter";
-import { useTafsir } from "/public/assets/api/ShowTafsir";
+import { useTafsir } from "/public/assets/ShowTafsir";
 export default function Homepage() {
   const [chapterIndex, setChapterIndex] = useState([]);
 const taf = useTafsir()

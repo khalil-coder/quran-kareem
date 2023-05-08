@@ -1,12 +1,12 @@
 import { useParams, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
-import { useTafsir } from "/public/assets/api/ShowTafsir";
+import { useTafsir } from "/public/assets/ShowTafsir";
 export default function QuranImage() {
 const taf = useTafsir()
   const style = {
     position: "absolute",
     inset: "0",
-    background: `linear-gradient(rgba(0,0,0,0.5), rgb(0,0,0,0.5)), url("../assets/alquran/${taf.img_src}")`,
+    background: `linear-gradient(rgba(0,0,0,0.5), rgb(0,0,0,0.5)), url("${taf.img_src}")`,
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
     backgroundPosition:"center center",
@@ -19,13 +19,13 @@ const taf = useTafsir()
   return (
     <div style={style}>
       <img
-        src={`/assets/alquran/${taf.img_src}`}
+        src={`/${taf.img_src}`}
         alt={taf.img_src}
         className="object-fit-contain img-fluid"
       />
       <br />
       <a
-        href={`../src/assets/alquran/${taf.img_src}`}
+        href={`/${taf.img_src}`}
         download={taf.img_src}
         className="btn btn-primary"
       >

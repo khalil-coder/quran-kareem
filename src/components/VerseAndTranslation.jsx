@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Tafsirs from "./Tafsir";
-import { arabicNumbers } from "/public/assets/api/urls";
-import { useTafsir } from "/public/assets/api/ShowTafsir";
+import { arabicNumbers } from "/public/assets/urls";
+import { useTafsir } from "/public/assets/ShowTafsir";
 export default function VerseAndTranslation({
   allState,
   verseKey,

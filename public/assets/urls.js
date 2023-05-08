@@ -35,8 +35,6 @@ export const images=[
 "the-dancing-rain-tFWqxQVB7R8-unsplash.jpg"
 ]
 export const fonts=[
-"Felicitation_Arabic Feasts",
-"BArabics",
 "trado",
 "BZar",
 "me_quran",

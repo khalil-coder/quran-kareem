@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useState, useEffect, useRef } from "react";
 import { useSearchParams } from "react-router-dom";
-import { searchLanguages } from "/public/assets/api/urls";
-import { useTafsir } from "/public/assets/api/ShowTafsir";
+import { searchLanguages } from "/public/assets/urls";
+import { useTafsir } from "/public/assets/ShowTafsir";
 import Tafsir from "./Tafsir";
 export default function SearchResult() {
   const taf = useTafsir();

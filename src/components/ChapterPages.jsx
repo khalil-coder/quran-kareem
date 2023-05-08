@@ -1,5 +1,5 @@
 import axios from "axios";
-import { reducer, ACTION } from "/public/assets/api/urls";
+import { reducer, ACTION } from "/public/assets/urls";
 import ChapterPage from "./ChapterPage";
 import { useState, useEffect, useReducer, lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";

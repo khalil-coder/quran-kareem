@@ -1,7 +1,7 @@
 import { Button, Container, Nav, Navbar, Offcanvas, Dropdown, NavDropdown } from "react-bootstrap";
 import { useState, useEffect} from "react";
 import { NavLink, Link } from "react-router-dom";
-import { useTafsir } from "/public/assets/api/ShowTafsir";
+import { useTafsir } from "/public/assets/ShowTafsir";
 function QuranNavbar() {
   const taf= useTafsir()
   const styleSpecial={
@@ -77,7 +77,7 @@ backgroundColor:"white", textDecoration:"none", display:"flex",fontSize:"13pt", 
 <li className="mb-2 list-group-item"> <NavLink style={style} to="about-developer"><span className="text-secondary">&lt;/&gt;</span> About Developer</NavLink></li>
  
  <li className="mb-2 list-group-item">
-{taf.img_src.length > 0 && <NavLink style={style} to={`quran-image/${taf.img_src}`}><i className="bi-play text-secondary"></i> Previewing... <img src={`/assets/alquran/${taf.img_src}`}
+{taf.img_src.length > 0 && <NavLink style={style} to={`quran-image/${taf.img_src}`}><i className="bi-play text-secondary"></i> Previewing... <img src={`/${taf.img_src}`}
         alt={taf.img_src} className="img-fluid w-100" />
 </NavLink>
 }

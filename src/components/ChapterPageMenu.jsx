@@ -1,8 +1,8 @@
 import { Alert, Button, Offcanvas, Dropdown } from "react-bootstrap";
-import { allTranslationLanguages, fonts } from "/public/assets/api/urls";
+import { allTranslationLanguages, fonts } from "/public/assets/urls";
 import { Link } from "react-router-dom";
 import { useRef, useEffect, useState } from "react";
-import { useTafsir } from "/public/assets/api/ShowTafsir";
+import { useTafsir } from "/public/assets/ShowTafsir";
 function ChapterPageMenu({
   showMenu,
   handleCloseMenu,
