@@ -21,7 +21,7 @@ export default function ChapterInfo({ show, handleClose, allState }) {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div dangerouslySetInnerHTML={{ __html: text_info }}></div>
+          <div id="chapter-info" dangerouslySetInnerHTML={{ __html: text_info }}></div>
         </Modal.Body>
         <Modal.Footer className="sticky-bottom">
           <Button

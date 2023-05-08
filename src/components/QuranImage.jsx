@@ -6,7 +6,7 @@ const taf = useTafsir()
   const style = {
     position: "absolute",
     inset: "0",
-    background: `linear-gradient(rgba(0,0,0,0.5), rgb(0,0,0,0.5)), url("${taf.img_src}")`,
+    background: `linear-gradient(rgba(0,0,0,0.5), rgb(0,0,0,0.5)), url("/${taf.img_src}")`,
     backgroundSize: "cover",
     backgroundAttachment: "fixed",
     backgroundPosition:"center center",
