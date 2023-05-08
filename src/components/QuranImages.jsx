@@ -1,6 +1,6 @@
-import { images } from "../assets/api/urls";
+import { images } from "/public/assets/api/urls";
 import {Link} from "react-router-dom"
-import { useTafsir } from "../assets/api/ShowTafsir";
+import { useTafsir } from "/public/assets/api/ShowTafsir";
 export default function QuranImages() {
   const taf = useTafsir()
   return <>
@@ -10,7 +10,7 @@ export default function QuranImages() {
   {
     images.map(image=>{
      return( <div className="card card-flush mb-2" >
-      <img src={`../src/assets/alquran/${image}`} className="img-fluid" alt={image}/>
+      <img src={`/assets/alquran/${image}`} className="img-fluid" alt={image}/>
       <div className="btn-group btn-group-sm">
       <Link to={`/quran-image/${image}`} className="btn btn-dark" onClick={()=> taf.setImgSrc(image)}>
       <i className="bi-play"></i> Preview</Link>

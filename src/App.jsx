@@ -7,7 +7,7 @@ const LazyAbout = lazy(() => import("./components/AboutQuran"));
 import SearchResult from "./components/SearchResult"
 import NoMatch from "./components/NoMatch";
 import QuranNavbar from "./components/Navbar";
-import { ShowTafsir } from "./assets/api/ShowTafsir";
+import { ShowTafsir } from "../public/assets/api/ShowTafsir";
 import QuranImage from "./components/QuranImage"
 import AboutDeveloper from "./components/AboutDeveloper"
 const style = {

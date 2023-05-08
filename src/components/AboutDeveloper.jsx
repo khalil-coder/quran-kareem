@@ -3,7 +3,7 @@ export default function AboutDeveloper(){
 return(
   <div className="about-dev p-2">
   <div style={{display:"flex", justifyContent:"center"}}>
-  <img src="../src/assets/developer_img.jpg" alt="developer_img" className="img-fluid w-70" style={{borderRadius:"0 0 5em 5em"}}/></div>
+  <img src="/assets/developer_img.jpg" alt="developer_img" className="img-fluid w-70" style={{borderRadius:"0 0 5em 5em"}}/></div>
   <p>
   Assalamua'laikum warhamatullahi wabarakatuhu. I am your brother in Islam, <strong>Babatunde Ibrahim Khalilullahi</strong> and a Nigerian Developer.
   This project is made possible by the Will of Allah [Subhanahu Wata'ala] and the purpose of developing this application is to make The Word of Allah (Al-Qur'an) accessible by everybody irrespective of your language or tribe as this application supports more than 60 translation languages, and to contribute to spreading the message of Islam as it's said in the following Hādith:

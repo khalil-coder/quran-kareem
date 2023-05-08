@@ -1,6 +1,6 @@
 import { Modal, Button } from "react-bootstrap";
 import axios from "axios";
-import { useTafsir } from "../assets/api/ShowTafsir";
+import { useTafsir } from "/public/assets/api/ShowTafsir";
 import { useState, useEffect } from "react";
 export default function Tafsirs({chapterId, verseIndex }) {
   const taf = useTafsir()

@@ -3,8 +3,8 @@ export default function AboutQuran() {
     <div className="p-3 about-div">
       <h3 className="about-heading text-center">  About The Holy Quran</h3> 
       <video type="video/mp4" controls="controls"
-      src="../src/assets/Holy_Books_The_Quran.mp4" className="img-fluid"
-      poster="../src/assets/alquran/syed-aoun-abbas-97o4XH0htUs-unsplash.jpg"  />
+      src="/assets/Holy_Books_The_Quran.mp4" className="img-fluid"
+      poster="/assets/alquran/syed-aoun-abbas-97o4XH0htUs-unsplash.jpg"  />
       
 <p className="first-para" >      
 Qurʾān, (Arabic: “Recitation”) also spelled Quran and Koran, the sacred scripture of Islam. According to conventional Islamic belief, the Qurʾān was revealed by the Angel Jubreel(A'layhim salam) to the Prophet Muhammad&#65018; in the West Arabian towns Mecca and Medina beginning in 610 and ending with Muhammad&#65018;’s death in 632 CE. The word qurʾān, which occurs already within the Islamic scripture itself (e.g., 9:111 and 75:17–18), is derived from the verb <em>qaraʾa—“to read,” “to recite”</em>—but there is probably also some connection with the Syriac qeryānā, “reading,” used for the recitation of scriptural readings during church services. The Qurʾānic corpus, composed in an early form of Classical Arabic, is traditionally believed to be a literal transcript of God’s speech and to constitute the earthly reproduction of an uncreated and eternal heavenly original, according to the general view referred to in the Qurʾān itself as<em> “The well-preserved tablet” (al-lawḥ al-mahfūẓ; Qurʾān 85:22)."</em></p>

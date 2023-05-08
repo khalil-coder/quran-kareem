@@ -1,5 +1,5 @@
-import { arabicNumbers } from "../assets/api/urls";
-import { useTafsir } from "../assets/api/ShowTafsir";
+import { arabicNumbers } from "/public/assets/api/urls";
+import { useTafsir } from "/public/assets/api/ShowTafsir";
 import {useEffect} from "react"
 export default function VerseOnly({chapter}) {
 const taf= useTafsir()
