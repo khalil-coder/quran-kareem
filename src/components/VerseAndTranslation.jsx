@@ -16,7 +16,7 @@ export default function VerseAndTranslation({
  useEffect(() => {
     var junction_font = new FontFace(
       "Thuluth",
-      `url("../ar_fonts/${taf.face}.ttf")`
+      `url("/public/ar_fonts/${taf.face}.ttf")`
     );
    junction_font.load()
       .then((loaded_face) => {

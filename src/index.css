@@ -7,18 +7,18 @@
 
 @font-face {
   font-family: "Bismillahi";
-  src: url("../ar_fonts/A Thuluth.ttf");
+  src: url("/public/ar_fonts/A Thuluth.ttf");
 }
 
 
 @font-face {
   font-family: "Text";
-  src: url("../ae_fonts1/AAHS/ae_Cortoba.ttf");
+  src: url("/public/ar_fonts/ae_Cortoba.ttf");
 }
 
 @font-face {
   font-family: "Index";
-  src: url("../ar_fonts/KFGQPC Uthmanic Script HAFS Regular.otf");
+  src: url("/public/ar_fonts/KFGQPC Uthmanic Script HAFS Regular.otf");
 }
 
 
