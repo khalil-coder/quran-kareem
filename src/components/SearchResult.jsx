@@ -5,6 +5,15 @@ import { searchLanguages } from "/public/assets/urls";
 import { useTafsir } from "/public/assets/ShowTafsir";
 import Tafsir from "./Tafsir";
 export default function SearchResult() {
+  const suspenseStyle = {
+  position: "absolute",
+  inset: 0,
+  display: "grid",
+  placeContent: "center",
+  background: 'url("/abdullah-arif-Dxi6KbpvUgA-unsplash.jpg")',
+  backgroundAttachment: "fixed",
+  backgroundSize:"cover",
+};
   const taf = useTafsir();
   const [allLanguages, setLanguages] = useState([]);
   const [searchFor, setSearchFor] = useState("");
@@ -25,15 +34,22 @@ export default function SearchResult() {
   const [resultPerPage, setResultPerPage] = useState(20);
   const [searchParams, setSearchParams] = useSearchParams()
   const [translatorNames, setTranslatorName] = useState([])
+  const [manageError, setError] = useState()
+  const [resultLength, setRL] = useState([])
+  const [searchNotFound, setSearchNotFound] = useState()
 
   const ref = useRef();
+  const errorMsg =`<div class="bi-exclamation-triangle-fill text-danger" style="font-size:4em; text-align:center"></div> 
+  We encounter a problem while fetching the resource from the server. <strong>HINTS:</strong> <ul><li>Please search for the correct word.</li> <li>Ensure you have strong internet connection! </li> <li>Refresh your browser</li><li>Search for different word</li> </ul>`
   const handleSearch = () => {
+    if(resultLength.length == 0 && manageError==undefined) { setSearchNotFound("No result found.") ;
+   }
+   else if(manageError==403) setSearchNotFound(errorMsg)
     if (ref.current.value.length > 1) setSearchFor(ref.current.value);
     else alert("Enter word you want to search for");
     setSearchParams({query: ref.current.value.toLowerCase()})
     ref.current.value = "";
     ref.current.value.length < 1 && setPageNumber(1);
-    
   };
   const handleLanguageChanging = (e) => {
     setISO(languageISOs[e.target.options.selectedIndex]);
@@ -76,7 +92,7 @@ export default function SearchResult() {
           searchWord.search;
         setCurrentPage(current_page);
         setTotalPages(total_pages);
-
+setRL(results)
         const { languages } = language;
         function searchForKey(obj, searchKey, result = []) {
           const r = result;
@@ -88,6 +104,7 @@ export default function SearchResult() {
           });
           return r;
         }
+
 
         function getEndIndex(arr, result = []) {
           const r = result;
@@ -117,6 +134,7 @@ export default function SearchResult() {
           });
           return r;
         }
+        
         setVerseKey(filterResults(results, "verse_key"));
         setResultText(filterResults(results, "text"));
         setResultTranslation( filterTranslation("text"))
@@ -134,7 +152,11 @@ export default function SearchResult() {
         setChapterIds(chapter);
         
       })
-      .catch((error) => console.log(error));
+      .catch((error) =>{ 
+        if(error)setError(error.response.status)
+        else setError("")
+      }
+        )
   }, [
     searchFor,
     prevISO,
@@ -143,9 +165,13 @@ export default function SearchResult() {
     resultPerPage,
     searchLengthWord,
     pageNumber,
+    searchNotFound,
+    manageError
   ]);
 
   return (
+    <>
+
     <main id="search-main">
       <div
         id="result-heading-bar"
@@ -248,6 +274,12 @@ export default function SearchResult() {
         </div>
       )}
       <Tafsir chapterId={chapterId} verseIndex={verseId} />
-    </main>
+    </main>{/*<div>Please refresh your browser</div>*/}
+    
+  {(resultLength.length == 0 ) && <div className="p-2">
+  <p dangerouslySetInnerHTML={{__html: searchNotFound}}>
+  </p>  
+  </div>}
+   </>
   );
 }

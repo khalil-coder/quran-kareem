@@ -6,7 +6,7 @@ const taf= useTafsir()
 useEffect(() => {
     var junction_font = new FontFace(
       "Thuluth",
-      `url("/public/ar_fonts/${taf.face}.ttf")`
+      `url("/ar_fonts/${taf.face}.ttf")`
     );
    junction_font.load()
       .then((loaded_face) => {

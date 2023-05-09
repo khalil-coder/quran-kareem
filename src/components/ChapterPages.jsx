@@ -1,14 +1,23 @@
 import axios from "axios";
 import { reducer, ACTION } from "/public/assets/urls";
-import ChapterPage from "./ChapterPage";
 import { useState, useEffect, useReducer, lazy, Suspense } from "react";
 import { useParams } from "react-router-dom";
+const LazyChapter = lazy(()=> import("./ChapterPage"))
 
 export default function ChapterPages() {
   const { chapterId } = useParams();
   const [verseKey, setVerseKey] = useState([]);
   const [translation_id, setTranslationId]=useState(131)
-  
+  const [manageError, setError]=useState()
+const suspenseStyle = {
+  position: "absolute",
+  inset: 0,
+  display: "grid",
+  placeContent: "center",
+  background: 'url("/abdullah-arif-Dxi6KbpvUgA-unsplash.jpg")',
+  backgroundAttachment: "fixed",
+  backgroundSize:"cover",
+};
   const style = {
     position: "absolute",
     inset: 0,
@@ -70,6 +79,7 @@ export default function ChapterPages() {
           { data: info },
           { data: allLanguagesEndpoint },
         ]) => {
+          
           const {chapters} = chaptersList
           const { verses } = verse;
           const { name_complex, name_arabic, translated_name } =
@@ -155,18 +165,31 @@ const languagesEndpoint = allLanguagesEndpoint.translations
 
         }
       )
-      .catch((error) => console.log(error.message));
+      .catch((error) => {
+       setError(error.response.status)
+        error.response.status == 403 && window.location.reload()
+      });
   }
 
   useEffect(() => {
     Chapter();
-  }, [chapterId, translation_id]);
+  }, [chapterId, translation_id, manageError]);
 
   return (
-    <>
-      <ChapterPage allState={allState} verseKey={verseKey} chapterId={chapterId}
+    <div>
+    {manageError != 403 ?
+          <Suspense
+            fallback={
+              <div style={suspenseStyle}><span>
+                <i className="spinner-border text-primary"> </i> Loading...</span>
+              </div>}>
+      <LazyChapter allState={allState} verseKey={verseKey} chapterId={chapterId}
       translation_id={translation_id}
       setTranslationId={setTranslationId}/>
-    </>
+          </Suspense> : <div style={suspenseStyle}><span>
+                <i className="spinner-border text-primary"> </i> Loading...</span>
+              </div>
+    }
+ </div>
   );
 }

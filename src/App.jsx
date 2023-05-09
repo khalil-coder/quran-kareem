@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
 const LazyHomepage = lazy(() => import("./components/Homepage"));
-const LazyChapter = lazy(() => import("./components/ChapterPages"));
+import ChapterPages from "./components/ChapterPages"
 const LazyImages = lazy(() => import("./components/QuranImages"));
 const LazyAbout = lazy(() => import("./components/AboutQuran"));
 import SearchResult from "./components/SearchResult"
@@ -44,16 +44,7 @@ function App() {
       <Route
         path="chapter/:chapterId"
         element={
-          <Suspense
-            fallback={
-              <div style={style}><span>
-                <i className="spinner-border text-primary"> </i> Loading...</span>
-              </div>
-            }
-          >
-            <LazyChapter />
-          </Suspense>
-        }
+           <ChapterPages />  }
       />
       <Route
         path="about-quran"
