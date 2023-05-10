@@ -50,6 +50,8 @@ export default function SearchResult() {
     setSearchParams({query: ref.current.value.toLowerCase()})
     ref.current.value = "";
     ref.current.value.length < 1 && setPageNumber(1);
+    
+    window.scrollTo(0,0)
   };
   const handleLanguageChanging = (e) => {
     setISO(languageISOs[e.target.options.selectedIndex]);
@@ -66,7 +68,7 @@ export default function SearchResult() {
       : setPageNumber((number) => number - 1);
     window.scrollTo(0, 0);
   };
-  useEffect(() => {
+    function Search(){
     const urls = [
       "https://quran-com.p.rapidapi.com/search",
       "https://quran-com.p.rapidapi.com/resources/languages",
@@ -152,11 +154,14 @@ setRL(results)
         setChapterIds(chapter);
         
       })
-      .catch((error) =>{ 
-        if(error)setError(error.response.status)
-        else setError("")
+      .catch((error) =>{
+      error.response.status == 403 && Search()
+        setError(error.response.status)
       }
         )
+    }
+  useEffect(() => {
+    Search()
   }, [
     searchFor,
     prevISO,
@@ -189,7 +194,7 @@ setRL(results)
             onClick={handleSearch}
           ></button>
         </div>
-        Languages:
+        Language:
         <select
           className=" bg-primary text-light  border-0"
           style={{ maxWidth: "110px", marginBottom: "5px", fontSize:"10pt" }}

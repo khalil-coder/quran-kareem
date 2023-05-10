@@ -51,7 +51,11 @@ export default function Tafsirs({chapterId, verseIndex }) {
         
         
       })
-      .catch((error) => console.log(error));
+      .catch((error) =>{
+        console.log(error)
+        error.response.status==403 && Tafsir()
+      }
+      )
   }
 
   useEffect(
@@ -101,7 +105,7 @@ export default function Tafsirs({chapterId, verseIndex }) {
                   onClick={() => 
                   setTafsirId(tafsirIds[i])
                   }
-                  className={`btn btn-sm btn-${btnColor[i]}`}>
+                  className={tafsirId == tafsirIds[i] ? `active btn btn-sm btn-outline-${btnColor[i]}`: `btn btn-sm btn-outline-${btnColor[i]}`}>
                   {tafsirer_names}
                 </button>
               );

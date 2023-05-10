@@ -21,7 +21,7 @@ const taf = useTafsir()
       .request(options)
       .then((response) => {setChapterIndex(response.data.chapters)
    taf.setChapters(response.data.chapters)})
-      .catch((error) => console.error(error));
+      .catch((error) => error.response.status==403&& ChaptersList());
   }
   useEffect(() => {
     ChaptersList();

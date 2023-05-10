@@ -21,6 +21,7 @@ function ChapterPageMenu({
   const [arabicFont, setArabicFont] = useState(15);
   
   const handleShowTranslation = (e) => {
+
     e.target.checked == true
       ? taf.setShowTranslation("block")
       : taf.setShowTranslation("none");
@@ -164,7 +165,7 @@ function ChapterPageMenu({
                     </Dropdown.Item>
                   ))}
                 </Dropdown.Menu>
-              </Dropdown>{" "}
+              </Dropdown>
             </li>
 
             <li className="mb-2 list-group-item">
@@ -177,7 +178,7 @@ function ChapterPageMenu({
                 }}
               >
                 {font_faces.map((f) => (
-                  <option key={f} onChange={()=>alert("++")}>{f}</option>
+                  <option key={f}>{f}</option>
                 ))}
               </select>
             </li>

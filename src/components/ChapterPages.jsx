@@ -8,7 +8,6 @@ export default function ChapterPages() {
   const { chapterId } = useParams();
   const [verseKey, setVerseKey] = useState([]);
   const [translation_id, setTranslationId]=useState(131)
-  const [manageError, setError]=useState()
 const suspenseStyle = {
   position: "absolute",
   inset: 0,
@@ -86,10 +85,7 @@ const suspenseStyle = {
             chapter.chapter;
           const { translations } = translate;
           const { text } = info.chapter_info;
-        //  alert(Object.entries(tafsirs[0]));
-           //Object
 const languagesEndpoint = allLanguagesEndpoint.translations
-      // alert(Object.keys(languagesEndpoint[0]))
           
           const result = [];
           const vKey = [];
@@ -160,24 +156,18 @@ const languagesEndpoint = allLanguagesEndpoint.translations
             type: TRANSLATION_LANGUAGE,
             payload: languagesEndpoint
           });
-  //  alert(searchForKey(languagesEndpoint))      
-//alert(Object.keys(languagesEndpoint[0]))
-
         }
       )
       .catch((error) => {
-       setError(error.response.status)
-        error.response.status == 403 && window.location.reload()
+       error.response.status == 403  && Chapter()
       });
   }
 
   useEffect(() => {
     Chapter();
-  }, [chapterId, translation_id, manageError]);
+  }, [chapterId, translation_id]);
 
   return (
-    <div>
-    {manageError != 403 ?
           <Suspense
             fallback={
               <div style={suspenseStyle}><span>
@@ -186,10 +176,7 @@ const languagesEndpoint = allLanguagesEndpoint.translations
       <LazyChapter allState={allState} verseKey={verseKey} chapterId={chapterId}
       translation_id={translation_id}
       setTranslationId={setTranslationId}/>
-          </Suspense> : <div style={suspenseStyle}><span>
-                <i className="spinner-border text-primary"> </i> Loading...</span>
-              </div>
-    }
- </div>
+          </Suspense>  
+      
   );
 }
