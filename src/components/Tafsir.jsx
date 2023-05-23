@@ -49,7 +49,7 @@ export default function Tafsirs({chapterId, verseIndex }) {
       })
       .catch((error) =>{
         error.response.status ==403 && Tafsir()
-        alert(error)
+        console.log(error)
       }
       )
   }
