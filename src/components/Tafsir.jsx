@@ -9,6 +9,7 @@ export default function Tafsirs({chapterId, verseIndex }) {
   const [tafsirIds, setTafsirIds] = useState([]);
   const [tafsirLanguage, setLanguage] = useState("english");
   const [tafsirer, setTafsirer] = useState([]);
+  const [manageError, setError] = useState();
 
   function Tafsir() {
     const urls = [
@@ -53,7 +54,8 @@ export default function Tafsirs({chapterId, verseIndex }) {
       })
       .catch((error) =>{
         console.log(error)
-        error.response.status==403 && Tafsir()
+        setError(error.response.status)
+        error.response.status ==403 && Tafsir()
       }
       )
   }
@@ -101,10 +103,13 @@ export default function Tafsirs({chapterId, verseIndex }) {
             {tafsirer.map((tafsirer_names, i) => {
             const btnColor = ["primary", "warning", "secondary", "success", "danger", "light", "dark", "info"]
               return (
+            
                 <button
-                  onClick={() => 
-                  setTafsirId(tafsirIds[i])
-                  }
+                  onClick={() =>{
+                  (tafsirIds[i])
+                  manageError == 403 && Tafsir()
+                  manageError != 403 && Tafsir()
+                 } }
                   className={tafsirId == tafsirIds[i] ? `active btn btn-sm btn-outline-${btnColor[i]}`: `btn btn-sm btn-outline-${btnColor[i]}`}>
                   {tafsirer_names}
                 </button>
